@@ -1,3 +1,5 @@
+import "./style.css";
+
 const URL_BASE = "https://swapi.dev/api";
 
 const response = await fetch(`${URL_BASE}/people`);
