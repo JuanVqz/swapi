@@ -1,4 +1,4 @@
-import "./style.css";
+import "./css/style.css";
 
 const URL_BASE = "https://swapi.dev/api";
 

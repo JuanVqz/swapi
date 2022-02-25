@@ -1,0 +1,16 @@
+@import url(./base.css);
+
+body {
+  color: #120c0e;
+}
+
+header,
+main {
+  padding: 1rem;
+}
+
+.app-header {
+  background-color: #403539;
+  color: white;
+  box-shadow: 0 0 0 3px hsl(340 20% 6% / 0.95);
+}
