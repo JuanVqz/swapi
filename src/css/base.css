@@ -21,10 +21,6 @@ html {
   line-height: 1.5;
 }
 
-body {
-  margin: 0;
-}
-
 img,
 picture,
 video,
@@ -49,4 +45,8 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+table {
+  border-collapse: collapse;
 }
