@@ -6,8 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier -w index.html src/**",
-    "check-format": "prettier -c index.html src/**",
+    "format": "prettier -w src/**",
+    "check-format": "prettier -c src/**",
     "lint": "eslint src/"
   },
   "devDependencies": {
