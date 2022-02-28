@@ -1,5 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
+import { ref } from "lit/directives/ref.js";
 import { router } from "/router.js";
 
 class AppElement extends LitElement {
@@ -42,12 +43,8 @@ class AppElement extends LitElement {
     `;
   }
 
-  firstUpdated() {
-    router.setOutlet(this.#outlet);
-  }
-
-  get #outlet() {
-    return this.renderRoot.querySelector("#outlet");
+  #updateOutlet(node) {
+    router.setOutlet(node);
   }
 
   render() {
@@ -63,7 +60,8 @@ class AppElement extends LitElement {
         </nav>
       </header>
       <main>
-        <div id="outlet"></div>
+        <!-- Route outlet -->
+        <div ${ref(this.#updateOutlet)}></div>
       </main>
     `;
   }
