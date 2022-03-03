@@ -1,6 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 import { ref } from "lit/directives/ref.js";
+import { fetchTopics } from "/api";
 import { router } from "/router.js";
 
 class AppElement extends LitElement {
@@ -28,6 +29,8 @@ class AppElement extends LitElement {
 
       a {
         color: inherit;
+        text-transform: capitalize;
+        margin-left: 15px;
       }
 
       a:not(:hover) {
@@ -43,6 +46,32 @@ class AppElement extends LitElement {
     `;
   }
 
+  static properties = {
+    _topics: { state: true, type: Object },
+  }
+
+  constructor() {
+    super();
+    this._topics = {};
+    this._loading = false;
+  }
+
+  async connectedCallback() {
+    super.connectedCallback();
+    try {
+      this._loading = true;
+      const response = await fetchTopics();
+      const results = await response.json();
+      console.log(results)
+
+      this._topics = results;
+    } catch (e) {
+      this._error = e.toString();
+    } finally {
+      this._loading = false;
+    }
+  }
+
   #updateOutlet(node) {
     router.setOutlet(node);
   }
@@ -53,9 +82,16 @@ class AppElement extends LitElement {
         <nav>
           <h1><a href="/">Swapi</a></h1>
           <ul>
-            <li>
-              <a href="/people">People</a>
-            </li>
+            ${
+              Object.keys(this._topics).map((topic) => 
+                html`
+                  <li>
+                    <a href="/${topic}">
+                      ${topic}
+                    </a>
+                  </li>`
+              )
+            }
           </ul>
         </nav>
       </header>
