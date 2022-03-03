@@ -48,7 +48,7 @@ class AppElement extends LitElement {
 
   static properties = {
     _topics: { state: true, type: Object },
-  }
+  };
 
   constructor() {
     super();
@@ -62,7 +62,7 @@ class AppElement extends LitElement {
       this._loading = true;
       const response = await fetchTopics();
       const results = await response.json();
-      console.log(results)
+      console.log(results);
 
       this._topics = results;
     } catch (e) {
@@ -82,16 +82,12 @@ class AppElement extends LitElement {
         <nav>
           <h1><a href="/">Swapi</a></h1>
           <ul>
-            ${
-              Object.keys(this._topics).map((topic) => 
-                html`
-                  <li>
-                    <a href="/${topic}">
-                      ${topic}
-                    </a>
-                  </li>`
-              )
-            }
+            ${Object.keys(this._topics).map(
+              (topic) =>
+                html` <li>
+                  <a href="/${topic}"> ${topic} </a>
+                </li>`
+            )}
           </ul>
         </nav>
       </header>

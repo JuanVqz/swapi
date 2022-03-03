@@ -4,6 +4,6 @@ export function fetchPeople() {
   return fetch(`${URL_BASE}/people`);
 }
 
-export async function fetchTopics () {
+export async function fetchTopics() {
   return fetch(URL_BASE);
 }

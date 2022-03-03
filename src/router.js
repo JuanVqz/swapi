@@ -1,7 +1,7 @@
 import { Router } from "@vaadin/router";
 import "/pages/index.js";
 import "/pages/people.js";
-import "/pages/not-found.js"
+import "/pages/not-found.js";
 
 export const router = new Router();
 
