@@ -1,4 +1,5 @@
 # Swapi
+
 Swapi is a website that uses the [Star Wars API](https://swapi.dev/).
 
 ## Installation

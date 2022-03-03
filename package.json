@@ -6,9 +6,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier -w src/**",
-    "check-format": "prettier -c src/**",
-    "lint": "eslint src/"
+    "format": "prettier -w .",
+    "check-format": "prettier -c .",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "eslint": "^8.10.0",
