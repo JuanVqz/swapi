@@ -1,2 +1,2 @@
 import "./css/style.css";
-import "./components/HomePage";
+import "./components/App.js";
