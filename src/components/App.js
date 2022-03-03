@@ -1,7 +1,7 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
 import { ref } from "lit/directives/ref.js";
-import { fetchTopics } from "../api";
+import { fetchTopics } from "/api";
 import { router } from "/router.js";
 
 class AppElement extends LitElement {
@@ -83,7 +83,7 @@ class AppElement extends LitElement {
           <h1><a href="/">Swapi</a></h1>
           <ul>
             ${
-              Object.entries(this._topics).map(([topic]) => 
+              Object.keys(this._topics).map((topic) => 
                 html`
                   <li>
                     <a href="/${topic}">
