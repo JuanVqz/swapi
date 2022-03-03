@@ -1,6 +1,6 @@
 # Swapi
 
-Swapi is a website that uses the [Star Wars API](https://swapi.dev/).
+Swapi is a website built in [Lit](https://lit.dev/) that uses the [Star Wars API](https://swapi.dev/).
 
 ## Installation
 
