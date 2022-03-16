@@ -21,6 +21,6 @@
   "type": "module",
   "dependencies": {
     "@vaadin/router": "^1.7.4",
-    "lit": "^2.2.0"
+    "lit": "^2.2.1"
   }
 }
