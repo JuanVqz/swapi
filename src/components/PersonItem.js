@@ -10,7 +10,7 @@ export class PersonItem extends LitElement {
 				padding: 10px;
 			}
 			span {
-				8px;
+				font-size: 8px;
 			}
 		`;
   }
