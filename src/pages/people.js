@@ -1,8 +1,26 @@
-import { html, LitElement } from "lit";
+import { html, css, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
+import "/components/PersonItem.js";
 import { fetchPeople } from "/api.js";
 
 export class PagePeople extends LitElement {
+  static get styles() {
+    return css`
+      ul {
+        display: grid;
+        gap: 15px;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      h2 {
+        text-align: center;
+      }
+    `;
+  }
+
   static properties = {
     _people: { state: true, type: Array },
     _loading: { state: true, type: Boolean },
@@ -36,7 +54,9 @@ export class PagePeople extends LitElement {
       ${this._loading ? html`<p>Loading...</p>` : null}
       ${this._error ? html`<p>${this._error}</p>` : null}
       <ul>
-        ${this._people.map((person) => html`<li>${person.name}</li>`)}
+        ${this._people.map(
+          (person) => html`<li><person-item .val=${person}></person-item></li>`
+        )}
       </ul>
     `;
   }
